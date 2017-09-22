@@ -1,8 +1,11 @@
 import processing.sound.*;
 // import java.util.ArrayList;
+final int number = 11;
 JSONObject json;
 ArrayList<Song> song;
-SoundFile file[];
+SoundFile []file = new SoundFile[number] ;
+PImage []iconimg = new PImage[number];
+
 int playedtime=0;
 int passed=0;
 int lastsecond;
@@ -13,7 +16,6 @@ void setup() {
 	song = new ArrayList<Song>();
 	json = loadJSONObject("data.json");//jsonfileのロード
 	JSONArray jsondatas = json.getJSONArray("songs");
-
 	for (int i = 0 ; i<json.size() ; i++){
 		JSONObject s = jsondatas.getJSONObject(i);
 		int id = s.getInt("id");
@@ -21,8 +23,9 @@ void setup() {
 		String musicpath = s.getString("musicpath");
 		String imgpath = s.getString("imgpath");
 		String bgcolor = s.getString("bgcolor");
-		file[i]= new SoundFile(this, musicpath);
-		song.add(new Song(id, title, musicpath, imgpath ,bgcolor, file[i], 0));
+		file[i]		= new SoundFile(this, "Silver Cluster.wav");
+		iconimg[i]	=loadImage(imgpath);
+		song.add(new Song(id, title, musicpath, imgpath ,bgcolor, file[i],iconimg[i], 0));
 
 		// song[i].id = s.getInt("id");
 		// song[i].title = s.getString("title");
@@ -47,15 +50,17 @@ class Song{
 	String imgpath;
 	String bgcolor;
 	SoundFile file;
+	PImage img;
 	int play;
 
-	Song(int _id, String _title,String _musicpath, String _imgpath, String _bgcolor, SoundFile _file, int _play){
+	Song(int _id, String _title,String _musicpath, String _imgpath, String _bgcolor, SoundFile _file,PImage _img, int _play){
 		id 			= _id;
 		title 		= _title;
 		musicpath 	= _musicpath;
 		imgpath 	= _imgpath;
 		bgcolor 	= _bgcolor;
 		file 		= _file;
+		img 		= _img;
 		play 		= _play;
 	}
 
@@ -78,8 +83,8 @@ class Song{
 		second=second();
 		if(play==1){
 			if(lastsecond!=second)passed+=1;
-		lastsecond=second;
 		}
+		lastsecond=second;
 	}
 }
 
