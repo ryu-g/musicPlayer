@@ -1,0 +1,79 @@
+{"songs":[
+	{
+	"id" 		:1,
+	"title"		:"GlayWorld",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:2,
+	"title"		:"Agorra",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:3,
+	"title"		:"metallic lustre <cold remix>",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:4,
+	"title"		:"eirini",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:5,
+	"title"		:"@0314 -nil history-",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:6,
+	"title"		:"諦めと戒め",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:7,
+	"title"		:"必要悪",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:8,
+	"title"		:"SilverCluster",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:9,
+	"title"		:"irinie",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:10,
+	"title"		:"Emporia",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	},
+	{
+	"id" 		:11,
+	"title"		:"SilverWorld <third winter remaster>",
+	"musicpath"		:"path to music",
+	"imgpath"	:"path to icon image",
+	"bgcolor"	:"string"
+	}]
+}
