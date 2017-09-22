@@ -2,78 +2,78 @@
 	{
 	"id" 		:1,
 	"title"		:"GlayWorld",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"GlayWorld.wav",
 	"imgpath"	:"01.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF5B5B66"
 	},
 	{
 	"id" 		:2,
 	"title"		:"Agorra",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"Agorra.wav",
 	"imgpath"	:"02.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF99826B"
 	},
 	{
 	"id" 		:3,
 	"title"		:"metallic lustre <cold remix>",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"metallic lustre cold remix.wav",
 	"imgpath"	:"03.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF757575"
 	},
 	{
 	"id" 		:4,
 	"title"		:"eirini",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"eirini.wav",
 	"imgpath"	:"04.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF99996B"
 	},
 	{
 	"id" 		:5,
 	"title"		:"@0314 -nil history-",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"@0314 -nil history-.wav",
 	"imgpath"	:"05.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF6B9999"
 	},
 	{
 	"id" 		:6,
 	"title"		:"諦めと戒め",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"akirame.wav",
 	"imgpath"	:"06.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF193E63"
 	},
 	{
 	"id" 		:7,
 	"title"		:"必要悪",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"hituyouaku.wav",
 	"imgpath"	:"07.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF753B3B"
 	},
 	{
 	"id" 		:8,
-	"title"		:"SilverCluster",
+	"title"		:"Silver Cluster",
 	"musicpath"	:"Silver Cluster.wav",
 	"imgpath"	:"08.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF6B8A99"
 	},
 	{
 	"id" 		:9,
-	"title"		:"irinie",
-	"musicpath"	:"Silver Cluster.wav",
+	"title"		:"inirie",
+	"musicpath"	:"inirie.wav",
 	"imgpath"	:"09.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF6B6B99"
 	},
 	{
 	"id" 		:10,
 	"title"		:"Emporia",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"Emporia.wav",
 	"imgpath"	:"10.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FFBFA760"
 	},
 	{
 	"id" 		:11,
 	"title"		:"SilverWorld <third winter remaster>",
-	"musicpath"	:"Silver Cluster.wav",
+	"musicpath"	:"SilverWorld -third winter remaster-.wav",
 	"imgpath"	:"11.png",
-	"bgcolor"	:"#ffffff"
+	"bgcolor"	:"FF8B9299"
 	} ]
 }
