@@ -10,6 +10,10 @@ int playedtime=0;
 int passed=0;
 int lastsecond;
 int second;
+boolean clicked ;
+int a=0,b=0;
+int choosed = 0;
+int lastChoosed =0;
 
 void setup() {
 	noStroke();
@@ -18,7 +22,6 @@ void setup() {
 	json = loadJSONObject("data.json");//jsonfileのロード
 	JSONArray jsondatas = json.getJSONArray("songs");
 	for (int i = 0 ; i<jsondatas.size() ; i++){
-		println("song.size(): "+song.size());
 		JSONObject s = jsondatas.getJSONObject(i);
 		int id = s.getInt("id");
 		String title = s.getString("title");
@@ -29,20 +32,21 @@ void setup() {
 		iconimg[i]	=loadImage(imgpath);
 		song.add(new Song(id, title, musicpath, imgpath ,bgcolor, file[i],iconimg[i], 0));
 		println(id+","+ title+","+ musicpath+","+ imgpath +","+bgcolor);
+		println("loaded ok: "+song.size());
 
 	}
-	println("song.size(): "+song.size());
+	println("-------stand by-------");
 }
 
 
 void draw() {
 	background(0);
 	int count=0;
-	for(int i=0 ; i<5 ; i++){
-		for(int j=0; j<3 ; j++){
+	for(int j=0 ; j<3 ; j++){
+		for(int i=0; i<6 ; i++){
 			song.get(count).display(100+120*i,100+120*j,100,100);
 			count++;
-			if(count==11){i=5;j=3;}
+			if(count==11){i=6;j=3;}
 		}
 	}
 }
@@ -60,6 +64,8 @@ class Song{
 	PImage img;
 	int play;
 
+	int x,y,w,h;
+
 	Song(int _id, String _title,String _musicpath, String _imgpath, String _bgcolor, SoundFile _file,PImage _img, int _play){
 		id 			= _id;
 		title 		= _title;
@@ -68,7 +74,7 @@ class Song{
 		bgcolor 	= _bgcolor;
 		file 		= _file;
 		img 		= _img;
-		play 		= _play;
+		play 		= _play;//default 0
 	}
 
 	void playSong(){
@@ -76,7 +82,8 @@ class Song{
 		this.file.play();//queから再生(基本は頭から)
 	}
 	void pauseSong(){
-		this.file.cue(passed-1);//一時停止後再開位置を保存
+		this.file.cue(passed);//一時停止後再開位置を保存
+		println("cued: "+passed);
 		this.file.stop();//再生を停止
 		play=0;//非再生状態
 	}
@@ -89,54 +96,47 @@ class Song{
 	void timecount(){
 		second=second();
 		if(play==1){
-			if(lastsecond!=second)passed+=1;
+			if(lastsecond!=second){passed+=1;println("passed: "+passed);}
 		}
 		lastsecond=second;
 	}
 	public void display(int x, int y, int w, int h){
 		image(img, x, y, w, h);
-
+		this.timecount();
 		if(x<mouseX&&mouseX<x+w&&y<mouseY&&mouseY<y+h){
 			fill(0,128);
 			rect(x,y,w,h);
 			fill(255);
-			triangle(x+w/3, y+h/3, x+w/3, y+h/3*2, x+w/3*2, y+h/2);
+			if(play==0)triangle(x+w/3, y+h/3, x+w/3, y+h/3*2, x+w/3*2, y+h/2);
+			if(play==1){rect(x+w/3,y+h/3,w/9,h/3);rect(x+w/9*5,y+h/3,w/9,h/3);}
 			noFill();
+			if(clicked){
+				choosed = this.id;println("lastChoosed: "+lastChoosed);
+				if(choosed==lastChoosed)
+				switch(play){
+					case 0:
+					this.playSong();
+					clicked = false;
+					break;
+					case 1:
+					this.pauseSong();
+					clicked = false;
+					break;
+				}
+				if(choosed!=lastChoosed){
+					this.stopSong();
+					clicked = false;
+				}
+				lastChoosed = choosed;
 			}
-
+		}
 	}
 }
 
 
+void mouseReleased(){
+	if(clicked){clicked=false;}
+	else if (!clicked){clicked=true;}
 
+}
 
-// void keyReleased() { //キーボード入力があったら
-// 	songname="silverCraster";
-// 	switch (key) {
-// 		case 'p'://一時停止中に再生
-// 			if(play==0)file.play(); //音を鳴らす
-// 			play=1;//再生中にする
-// 			break;
-// 		case 'q'://再生中に一時停止
-// 			if(play==1){
-// 			file.cue(passed-1);
-// 			println("cued in "+passed);
-// 			file.stop();
-// 			}
-// 			play=0;
-// 			break;
-// 		case 's'://完全停止、待機状態
-// 			if(play==1){
-// 			file.stop();
-// 			file.cue(0);
-// 			}
-// 			if(play==0){
-// 			file.cue(0);
-// 			println("cued in "+0);
-// 			}
-// 			play=0;
-// 			passed=0;
-// 			songname="now stand by";
-// 			break;
-// 	}
-// }
