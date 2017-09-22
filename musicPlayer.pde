@@ -12,11 +12,13 @@ int lastsecond;
 int second;
 
 void setup() {
+	noStroke();
 	size(900,600);
 	song = new ArrayList<Song>();
 	json = loadJSONObject("data.json");//jsonfileのロード
 	JSONArray jsondatas = json.getJSONArray("songs");
-	for (int i = 0 ; i<json.size() ; i++){
+	for (int i = 0 ; i<jsondatas.size() ; i++){
+		println("song.size(): "+song.size());
 		JSONObject s = jsondatas.getJSONObject(i);
 		int id = s.getInt("id");
 		String title = s.getString("title");
@@ -26,18 +28,23 @@ void setup() {
 		file[i]		= new SoundFile(this, "Silver Cluster.wav");
 		iconimg[i]	=loadImage(imgpath);
 		song.add(new Song(id, title, musicpath, imgpath ,bgcolor, file[i],iconimg[i], 0));
+		println(id+","+ title+","+ musicpath+","+ imgpath +","+bgcolor);
 
-		// song[i].id = s.getInt("id");
-		// song[i].title = s.getString("title");
-		// song[i].musicpath = s.getString("musicpath");
-		// song[i].imgpath = s.getString("imgpath");
-		// song[i].bgcolor = s.getString("bgcolor");
 	}
+	println("song.size(): "+song.size());
 }
 
 
 void draw() {
 	background(0);
+	int count=0;
+	for(int i=0 ; i<5 ; i++){
+		for(int j=0; j<3 ; j++){
+			song.get(count).display(100+120*i,100+120*j,100,100);
+			count++;
+			if(count==11){i=5;j=3;}
+		}
+	}
 }
 
 
@@ -85,6 +92,18 @@ class Song{
 			if(lastsecond!=second)passed+=1;
 		}
 		lastsecond=second;
+	}
+	public void display(int x, int y, int w, int h){
+		image(img, x, y, w, h);
+
+		if(x<mouseX&&mouseX<x+w&&y<mouseY&&mouseY<y+h){
+			fill(0,128);
+			rect(x,y,w,h);
+			fill(255);
+			triangle(x+w/3, y+h/3, x+w/3, y+h/3*2, x+w/3*2, y+h/2);
+			noFill();
+			}
+
 	}
 }
 

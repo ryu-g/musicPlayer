@@ -1,79 +1,79 @@
-{"songs":[
+{"songs": [
 	{
 	"id" 		:1,
 	"title"		:"GlayWorld",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"01.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:2,
 	"title"		:"Agorra",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"02.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:3,
 	"title"		:"metallic lustre <cold remix>",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"03.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:4,
 	"title"		:"eirini",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"04.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:5,
 	"title"		:"@0314 -nil history-",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"05.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:6,
 	"title"		:"諦めと戒め",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"06.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:7,
 	"title"		:"必要悪",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"07.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:8,
 	"title"		:"SilverCluster",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"08.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:9,
 	"title"		:"irinie",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"09.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:10,
 	"title"		:"Emporia",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
+	"imgpath"	:"10.png",
+	"bgcolor"	:"#ffffff"
 	},
 	{
 	"id" 		:11,
 	"title"		:"SilverWorld <third winter remaster>",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"img.png",
-	"bgcolor"	:"string"
-	}]
+	"imgpath"	:"11.png",
+	"bgcolor"	:"#ffffff"
+	} ]
 }
