@@ -17,7 +17,6 @@ import java.io.IOException;
 public class musicPlayer extends PApplet {
 
 
-
 // import java.util.ArrayList;
 final int number = 11;
 JSONObject json;
@@ -27,6 +26,7 @@ PImage []iconimg = new PImage[number];
 PImage bysk;
 int playedtime=0;
 boolean clicked ;
+boolean onMouse = false;
 int a=0,b=0;
 int choosed = -1;
 int lastChoosed =0;
@@ -79,6 +79,7 @@ public void draw() {
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);
 	}
+	text(PApplet.parseInt(clicked),40,20);
 
 }
 
@@ -149,7 +150,7 @@ class Song{
 			//-----------------
 			statusOverRay(x,y,w,h,play);
 			//------------------
-			if(clicked){
+			if(clicked&&onMoused(x,y,w,h)){
 				choosed = this.id;
 				println("(nowchoosed,lastChoosed)="+"("+choosed+","+lastChoosed+")");
 				if(choosed==lastChoosed||lastChoosed==0){
@@ -176,11 +177,18 @@ class Song{
 	}
 }
 
+public boolean onMoused(int x,int y,int w,int h){
+	if(x<mouseX&&mouseX<x+w&&y<mouseY&&mouseY<y+h)
+		onMouse=true;
+	return onMouse;
+}
+public void mouseMoved() {
+	clicked=false;
+}
 
 public void mouseReleased(){
 	if(clicked){clicked=false;}
 	else if (!clicked){clicked=true;}
-
 }
 
 
