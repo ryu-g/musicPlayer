@@ -79,8 +79,6 @@ public void draw() {
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);
 	}
-	text(PApplet.parseInt(clicked),40,20);
-
 }
 
 
