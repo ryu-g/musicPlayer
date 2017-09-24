@@ -1,76 +1,30 @@
-<<<<<<< HEAD
 memo
 
 minimの動作確認							>>SoundFileで解決、import済 ok
-amigomusicを試しに一曲入れる				>>m4a動かず、実際動かす予定のwavで動作確認 ok
+amigomusicを試しに一曲入れる					>>m4a動かず、実際動かす予定のwavで動作確認 ok
 再生										>>ok
 一時停止									>>ok
 再開										>>ok
 停止										>>ok
-jsonでarraylist管理の用意					>>ファイル作成まではok、空データ、Listは未作成
+jsonでarraylist管理の用意					>>ok
 格納データ
-	楽曲ファイルパス(string)					>>jsonに書き込んでおいて取得
-	曲名(string)							>>jsonに書き込んでおいて取得
-	時間(int?)							>>file.dration()で取得
-	アイコン画像パス(string)				>>jsonに書き込んでおいて取得
+	楽曲ファイルパス(string)					>>ok
+	曲名(string)							>>ok
+	時間(int?)							>>ok
+	アイコン画像パス(string)					>>ok
 
 画面構成
-アイコン(アートワーク？)に用いる画像の用意		>>
+アイコン(アートワーク？)に用いる画像の用意			>>暫定配置ok
 数値イージングによる曲変更時の効果設定			>>強火で進め　をチェックする
-現在位置表示の奴検討(レイアウト次第)
-a.youtube方式
+現在位置表示の奴検討(レイアウト次第)			>>
+a.youtube方式							>>processing...
 b.soundcloud方式
 
 必要になるもの
-skロゴ
-各種カラーコード(芝と調整)
+skロゴ									>>ok
+各種カラーコード(芝と調整)						>>ok
 
 
 画面に表示する
-	曲名用のフォントチェックwith芝
-	時間用のフォントチェックwith芝
-
-
-1. GlayWorld
-2. Agorra
-3. metallic lustre <cold remix>
-4. eirini
-5. @0314 -nil history-
-6. 諦めと戒め
-7. 必要悪
-8. SilverCluster
-9. irinie
-10. Emporia
-11. SilverWorld <third winter remaster>
-=======
-memo
-
-minimの動作確認							>>SoundFileで解決、import済 ok
-amigomusicを試しに一曲入れる				>>m4a動かず、実際動かす予定のwavで動作確認 ok
-再生										>>ok
-一時停止									>>ok
-再開										>>ok
-停止										>>ok
-jsonでarraylist管理の用意					>>ファイル作成まではok、空データ、Listは未作成
-格納データ
-	楽曲ファイルパス(string)					>>jsonに書き込んでおいて取得
-	曲名(string)							>>jsonに書き込んでおいて取得
-	時間(int?)							>>file.dration()で取得
-	アイコン画像パス(string)				>>jsonに書き込んでおいて取得
-
-画面構成
-アイコン(アートワーク？)に用いる画像の用意		>>
-数値イージングによる曲変更時の効果設定			>>強火で進め　をチェックする
-現在位置表示の奴検討(レイアウト次第)
-a.youtube方式
-b.soundcloud方式
-
-必要になるもの
-skロゴ
-各種カラーコード(芝と調整)
-
-
-画面に表示する
-	曲名用のフォントチェックwith芝
-	時間用のフォントチェックwith芝
->>>>>>> 5538edab6b6ead4762e085c9ccc2fd910caec8d0
+	曲名用のフォントチェックwith芝				>>processing...
+	時間用のフォントチェックwith芝				>>processing...
