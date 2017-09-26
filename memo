@@ -18,7 +18,10 @@ jsonでarraylist管理の用意					>>ok
 数値イージングによる曲変更時の効果設定			>>強火で進め　をチェックする
 現在位置表示の奴検討(レイアウト次第)			>>
 a.youtube方式							>>processing...
-b.soundcloud方式
+b.soundcloud方式							>>
+for(i ; i<*** ; i++)
+rect(x+w*i,y,w,音圧(t))
+
 
 必要になるもの
 skロゴ									>>ok
@@ -28,3 +31,12 @@ skロゴ									>>ok
 画面に表示する
 	曲名用のフォントチェックwith芝				>>processing...
 	時間用のフォントチェックwith芝				>>processing...
+
+*欲しいのは時間tのときの音量の値 volume(t)　volumuは0~100を0~scaleでmap
+volume(t)はrectのhになる
+
+
+
+passedをvLengthの長さの範囲のx座標にmap
+currentSecondを　0s~239sの範囲から x~vlengthの範囲へ
+
