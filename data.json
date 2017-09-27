@@ -36,14 +36,14 @@
 	},
 	{
 	"id" 		:6,
-	"title"		:"諦めと戒め",
+	"title"		:"kairame to imashime",
 	"musicpath"	:"akirame.wav",
 	"imgpath"	:"06.png",
 	"bgcolor"	:"FF193E63"
 	},
 	{
 	"id" 		:7,
-	"title"		:"必要悪",
+	"title"		:"hituyouaku",
 	"musicpath"	:"hituyouaku.wav",
 	"imgpath"	:"07.png",
 	"bgcolor"	:"FF753B3B"
