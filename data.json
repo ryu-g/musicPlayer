@@ -3,77 +3,77 @@
 	"id" 		:1,
 	"title"		:"GlayWorld",
 	"musicpath"	:"GlayWorld.wav",
-	"imgpath"	:"01.png",
+	"imgpath"	:"icon-01.svg",
 	"bgcolor"	:"FF5B5B66"
 	},
 	{
 	"id" 		:2,
 	"title"		:"Agorra",
 	"musicpath"	:"Agorra.wav",
-	"imgpath"	:"02.png",
+	"imgpath"	:"icon-02.svg",
 	"bgcolor"	:"FF99826B"
 	},
 	{
 	"id" 		:3,
 	"title"		:"metallic lustre <cold remix>",
 	"musicpath"	:"metallic lustre cold remix.wav",
-	"imgpath"	:"03.png",
+	"imgpath"	:"icon-03.svg",
 	"bgcolor"	:"FF757575"
 	},
 	{
 	"id" 		:4,
 	"title"		:"eirini",
 	"musicpath"	:"eirini.wav",
-	"imgpath"	:"04.png",
+	"imgpath"	:"icon-04.svg",
 	"bgcolor"	:"FF99996B"
 	},
 	{
 	"id" 		:5,
 	"title"		:"@0314 -nil history-",
 	"musicpath"	:"@0314 -nil history-.wav",
-	"imgpath"	:"05.png",
+	"imgpath"	:"icon-05.svg",
 	"bgcolor"	:"FF6B9999"
 	},
 	{
 	"id" 		:6,
 	"title"		:"akirame to imashime",
 	"musicpath"	:"akirame.wav",
-	"imgpath"	:"06.png",
+	"imgpath"	:"icon-06.svg",
 	"bgcolor"	:"FF193E63"
 	},
 	{
 	"id" 		:7,
 	"title"		:"hituyouaku",
 	"musicpath"	:"hituyouaku.wav",
-	"imgpath"	:"07.png",
+	"imgpath"	:"icon-07.svg",
 	"bgcolor"	:"FF753B3B"
 	},
 	{
 	"id" 		:8,
 	"title"		:"Silver Cluster",
 	"musicpath"	:"Silver Cluster.wav",
-	"imgpath"	:"08.png",
+	"imgpath"	:"icon-08.svg",
 	"bgcolor"	:"FF6B8A99"
 	},
 	{
 	"id" 		:9,
 	"title"		:"inirie",
 	"musicpath"	:"inirie.wav",
-	"imgpath"	:"09.png",
+	"imgpath"	:"icon-09.svg",
 	"bgcolor"	:"FF6B6B99"
 	},
 	{
 	"id" 		:10,
 	"title"		:"Emporia",
 	"musicpath"	:"Emporia.wav",
-	"imgpath"	:"10.png",
+	"imgpath"	:"icon-10.svg",
 	"bgcolor"	:"FFBFA760"
 	},
 	{
 	"id" 		:11,
 	"title"		:"SilverWorld <third winter remaster>",
 	"musicpath"	:"SilverWorld -third winter remaster-.wav",
-	"imgpath"	:"11.png",
+	"imgpath"	:"icon-11.svg",
 	"bgcolor"	:"FF8B9299"
 	} ]
 }

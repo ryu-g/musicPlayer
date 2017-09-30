@@ -21,8 +21,8 @@ public class musicPlayer extends PApplet {
 final int number = 11;
 JSONObject json;
 ArrayList<Song> song;
-SoundFile []file = new SoundFile[number] ;
-PImage []iconimg = new PImage[number];
+SoundFile[] file = new SoundFile[number] ;
+PShape[] iconimg = new PShape[number];
 PImage bysk;
 int playedtime=0;
 boolean clicked ;
@@ -33,13 +33,13 @@ int lastChoosed =0;
 int x,y,w,h,dx;
 //--------------------end of param--------
 public void setup() {
+	println("aaaa"+iconimg.length);
 	
 	noStroke();
 	textSize(width/30);
 
 	song = new ArrayList<Song>();
 	json = loadJSONObject("data.json");//jsonfile\u306e\u30ed\u30fc\u30c9
-
 	JSONArray jsondatas = json.getJSONArray("songs");
 	for (int i = 0 ; i<jsondatas.size() ; i++){
 		JSONObject s = jsondatas.getJSONObject(i);
@@ -49,18 +49,20 @@ public void setup() {
 		String imgpath = s.getString("imgpath");
 		int bgcolor = unhex(s.getString("bgcolor"));
 		file[i]		= new SoundFile(this, musicpath);
-		iconimg[i]	=loadImage(imgpath);
+		iconimg[i]	= loadShape(imgpath);
 		song.add(new Song(id, title, musicpath, imgpath ,bgcolor, file[i],iconimg[i], 0));
 		println(id+","+ title+","+ musicpath+","+ imgpath +","+bgcolor);
 		println("loaded ok: "+song.size());
 	}
 	println("-------stand by-------");
 	bysk=loadImage("logow.png");
-	x=width/28;
 	y=height/2;
 	w=width/15;
 	h=w;
+	dx=width/50;
+	x=width/2-((number-1)*dx/2)-((number-1)*w/2);
 	dx=w+width/50;
+
 	background(0xff4e1a68);
 }
 
@@ -74,11 +76,12 @@ public void draw() {
 	else	text(song.get(choosed-1).title,width/28,height/7*5);
 
 	imageMode(CENTER);
+	rectMode(CENTER);
 	image(bysk,width/2,height/7*2,width/10,width/10);
-	imageMode(CORNER);
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);
 	}
+	pos();
 }
 
 
@@ -89,14 +92,15 @@ class Song{
 	String imgpath;
 	int bgcolor;
 	SoundFile file;
-	PImage img;
+	PShape img;
 	int play;
 	int passed=0;
+	int paused=0;
 	int x,y,w,h;
 	int lastsecond;
 	int second;
 
-	Song(int _id, String _title,String _musicpath, String _imgpath, int _bgcolor, SoundFile _file,PImage _img, int _play){
+	Song(int _id, String _title,String _musicpath, String _imgpath, int _bgcolor, SoundFile _file,PShape _img, int _play){
 		id 			= _id;
 		title 		= _title;
 		musicpath 	= _musicpath;
@@ -123,8 +127,10 @@ class Song{
 		}
 		this.file.cue(0);//\u518d\u958b\u4f4d\u7f6e\u30920\u306b\u3059\u308b
 		this.play=0;//\u975e\u518d\u751f\u72b6\u614b
+		passed=0;
+		paused=0;
 	}
-	public void timecount(){
+	public void timeCount(){
 		second=second();
 		if(this.play==1){
 			if(lastsecond!=second){
@@ -137,13 +143,13 @@ class Song{
 		if(this.file.duration()<passed){
 			stopSong();
 			choosed=-1;
-			passed=0;
 		}
 	}
+
 	public void display(int x, int y, int w, int h){
-		image(img, x, y, w, h);
-		this.timecount();
-		if(x<mouseX&&mouseX<x+w&&y<mouseY&&mouseY<y+h){
+		shape(img, x, y, w, h);
+		this.timeCount();
+		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2){
 			//-----------------
 			statusOverRay(x,y,w,h,play);
 			//------------------
@@ -175,7 +181,7 @@ class Song{
 }
 
 public boolean onMoused(int x,int y,int w,int h){
-	if(x<mouseX&&mouseX<x+w&&y<mouseY&&mouseY<y+h)
+	if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2)
 		onMouse=true;
 	return onMouse;
 }
@@ -193,9 +199,21 @@ public void statusOverRay(int x,int y,int w,int h,int status){
 	fill(0,128);
 	rect(x,y,w,h);
 	fill(255);
-	if(status==0)triangle(x+w/3, y+h/3, x+w/3, y+h/3*2, x+w/3*2, y+h/2);
-	if(status==1){rect(x+w/3,y+h/3,w/9,h/3);rect(x+w/9*5,y+h/3,w/9,h/3);}
+	if(status==0)triangle(x-w/6, y-h/6, x+w/6, y, x-w/6, y+h/6);
+	if(status==1){rect(x-w/8,y,w/9,h/3);rect(x+w/8,y,w/9,h/3);}
 	noFill();
+}
+
+
+
+public void pos(){
+	stroke(255,0,0);
+	textSize(12);
+	line(mouseX,0,mouseX,height);
+	line(0,mouseY,width,mouseY);
+	text(mouseX+","+mouseY,mouseX+20,mouseY);
+	text("width="+width+","+"height="+height,mouseX+20,mouseY+20);
+	noStroke();
 }
   public void settings() { 	fullScreen(); }
   static public void main(String[] passedArgs) {
