@@ -41,7 +41,7 @@ void setup() {
 	w=width/15;
 	h=w;
 	dx=width/50;
-	x=(width-((number-1)*(dx-w)))/2;
+	x=(width-((number-1)*(dx+w)))/2;
 	dx+=w;
 
 	background(#4e1a68);
@@ -58,6 +58,7 @@ void draw() {
 
 	imageMode(CENTER);
 	rectMode(CENTER);
+	shapeMode(CENTER);
 	image(bysk,width/2,height/7*2,width/10,width/10);
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);

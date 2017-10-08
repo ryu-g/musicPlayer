@@ -24,8 +24,7 @@ ArrayList<Song> song;
 SoundFile[] file = new SoundFile[number] ;
 PShape[] iconimg = new PShape[number];
 PImage bysk;
-int playedtime=0;
-boolean clicked ;
+boolean clicked;
 boolean onMouse = false;
 int a=0,b=0;
 int choosed = -1;
@@ -42,14 +41,14 @@ public void setup() {
 	json = loadJSONObject("data.json");//jsonfile\u306e\u30ed\u30fc\u30c9
 	JSONArray jsondatas = json.getJSONArray("songs");
 	for (int i = 0 ; i<jsondatas.size() ; i++){
-		JSONObject s = jsondatas.getJSONObject(i);
-		int id = s.getInt("id");
-		String title = s.getString("title");
-		String musicpath = s.getString("musicpath");
-		String imgpath = s.getString("imgpath");
-		int bgcolor = unhex(s.getString("bgcolor"));
-		file[i]		= new SoundFile(this, musicpath);
-		iconimg[i]	= loadShape(imgpath);
+		JSONObject s 		= jsondatas.getJSONObject(i);
+		int id 				= s.getInt("id");
+		String title 		= s.getString("title");
+		String musicpath 	= s.getString("musicpath");
+		String imgpath 		= s.getString("imgpath");
+		int bgcolor 		= unhex(s.getString("bgcolor"));
+		file[i]				= new SoundFile(this, musicpath);
+		iconimg[i]			= loadShape(imgpath);
 		song.add(new Song(id, title, musicpath, imgpath ,bgcolor, file[i],iconimg[i], 0));
 		println(id+","+ title+","+ musicpath+","+ imgpath +","+bgcolor);
 		println("loaded ok: "+song.size());
@@ -60,8 +59,8 @@ public void setup() {
 	w=width/15;
 	h=w;
 	dx=width/50;
-	x=width/2-((number-1)*dx/2)-((number-1)*w/2);
-	dx=w+width/50;
+	x=(width-((number-1)*(dx+w)))/2;
+	dx+=w;
 
 	background(0xff4e1a68);
 }
@@ -77,6 +76,7 @@ public void draw() {
 
 	imageMode(CENTER);
 	rectMode(CENTER);
+	shapeMode(CENTER);
 	image(bysk,width/2,height/7*2,width/10,width/10);
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);
@@ -101,11 +101,11 @@ class Song{
 	int second;
 
 	Song(int _id, String _title,String _musicpath, String _imgpath, int _bgcolor, SoundFile _file,PShape _img, int _play){
-		id 			= _id;
-		title 		= _title;
-		musicpath 	= _musicpath;
-		imgpath 	= _imgpath;
-		bgcolor 	= _bgcolor;
+		id			= _id;
+		title		= _title;
+		musicpath	= _musicpath;
+		imgpath	= _imgpath;
+		bgcolor	= _bgcolor;
 		file 		= _file;
 		img 		= _img;
 		play 		= _play;//default 0
