@@ -5,7 +5,7 @@ JSONObject json;
 ArrayList<Song> song;
 SoundFile[] file = new SoundFile[number] ;
 PShape[] iconimg = new PShape[number];
-PImage bysk;
+PShape bysk;
 boolean clicked;
 boolean onMouse = false;
 int a=0,b=0;
@@ -36,8 +36,8 @@ void setup() {
 		println("loaded ok: "+song.size());
 	}
 	println("-------stand by-------");
-	bysk=loadImage("logow.png");
-	y=height/2;
+	bysk=loadShape("logow.svg");
+	y=height/7*4;
 	w=width/15;
 	h=w;
 	dx=width/50;
@@ -59,11 +59,11 @@ void draw() {
 	imageMode(CENTER);
 	rectMode(CENTER);
 	shapeMode(CENTER);
-	image(bysk,width/2,height/7*2,width/10,width/10);
+	shape(bysk,width/2,height/7*2,width/10,width/10);
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);
 	}
-	pos();
+	//pos();
 }
 
 
@@ -131,7 +131,8 @@ class Song{
 	public void display(int x, int y, int w, int h){
 		fill(this.bgcolor);
 		rect(x,y,w,h);
-		shape(img, x, y, w, h);
+		if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3, h*1.3);
+		else shape(img, x, y, w, h);
 		fill(255);
 		this.timeCount();
 		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2){
