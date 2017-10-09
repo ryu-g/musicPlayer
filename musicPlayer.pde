@@ -129,7 +129,10 @@ class Song{
 	}
 
 	public void display(int x, int y, int w, int h){
+		fill(this.bgcolor);
+		rect(x,y,w,h);
 		shape(img, x, y, w, h);
+		fill(255);
 		this.timeCount();
 		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2){
 			//-----------------

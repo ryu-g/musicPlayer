@@ -48,7 +48,7 @@ public void setup() {
 		String imgpath 		= s.getString("imgpath");
 		int bgcolor 		= unhex(s.getString("bgcolor"));
 		file[i]				= new SoundFile(this, musicpath);
-		iconimg[i]			= loadShape("icon-05.svg");
+		iconimg[i]			= loadShape(imgpath);
 		song.add(new Song(id, title, musicpath, imgpath ,bgcolor, file[i],iconimg[i], 0));
 		println(id+","+ title+","+ musicpath+","+ imgpath +","+bgcolor);
 		println("loaded ok: "+song.size());
@@ -66,7 +66,7 @@ public void setup() {
 }
 
 
-	
+
 public void draw() {
 	if(choosed==-1)background(0xff4e1a68);
 	else	background(song.get(choosed-1).bgcolor);
@@ -147,7 +147,10 @@ class Song{
 	}
 
 	public void display(int x, int y, int w, int h){
+		fill(this.bgcolor);
+		rect(x,y,w,h);
 		shape(img, x, y, w, h);
+		fill(255);
 		this.timeCount();
 		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2){
 			//-----------------

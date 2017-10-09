@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 800"><defs><style>.cls-1{fill:none;}.cls-2{fill:#5b5b66;}.cls-3{fill:#fff;}.cls-4{clip-path:url(#clip-path);}</style><clipPath id="clip-path"><rect class="cls-1" x="116.68" y="114.453" width="565.786" height="565.786"/></clipPath></defs><title>icon</title><g id="_1._GlayWorld" data-name="1. GlayWorld"><rect class="cls-2" x="-32.224" y="-34.864" width="864.448" height="864.448"/></g><g id="_5._0314_-nil_history-" data-name="5. @0314 -nil history-"><circle class="cls-3" cx="412.303" cy="217.709" r="90.526"/><circle class="cls-3" cx="412.657" cy="623.307" r="22.278"/><circle class="cls-3" cx="430.691" cy="531.721" r="40.312"/><g class="cls-4"><path class="cls-3" d="M390.379,345.011a58.694,58.694,0,0,0-52.057,85.818l83.55-76.644A58.4,58.4,0,0,0,390.379,345.011Z"/><path class="cls-3" d="M368.007,457.987a58.7,58.7,0,0,0,74.514-81.228Z"/><path class="cls-3" d="M442.521,376.759l240.3-261.952L421.872,354.185A58.948,58.948,0,0,1,442.521,376.759Z"/><path class="cls-3" d="M338.322,430.829,92.273,656.54l48.814,48.814,226.92-247.367A58.9,58.9,0,0,1,338.322,430.829Z"/></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 800 800" style="enable-background:new 0 0 800 800; fill:#FFFFFF;" xml:space="preserve">
+<title>icon</title>
+<circle class="st0" cx="412.3" cy="217.7" r="90.5"/>
+<circle class="st0" cx="412.7" cy="623.3" r="22.3"/>
+<circle class="st0" cx="430.7" cy="531.7" r="40.3"/>
+<path class="st0" d="M390.4,345c-32.4,0-58.7,26.3-58.7,58.7c0,9.4,2.3,18.8,6.6,27.1l83.6-76.6C412.5,348.2,401.5,345,390.4,345z"
+	/>
+<path class="st0" d="M368,458c30,12.4,64.3-1.9,76.6-31.9c6.6-16,5.8-34-2.1-49.3L368,458z"/>
+<path class="st0" d="M442.5,376.8l240.3-262L421.9,354.2C430.6,359.8,437.7,367.5,442.5,376.8z"/>
+<path class="st0" d="M338.3,430.8L116.7,634.2v46.1h47.4L368,458C355.2,452.7,344.7,443.1,338.3,430.8z"/>
+</svg>

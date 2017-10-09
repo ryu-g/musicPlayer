@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><defs><style>.cls-1{fill:#99826b;}.cls-2{fill:#fff;}</style></defs><title>icon</title><g id="_1._GlayWorld" data-name="1. GlayWorld"><rect class="cls-1" x="-35.224" y="-37.865" width="870.449" height="870.449"/></g><g id="_2._Agorra" data-name="2. Agorra"><path class="cls-2" d="M399.776,319.686a50.534,50.534,0,1,1-50.534,50.534,50.591,50.591,0,0,1,50.534-50.534m0-14.135a64.67,64.67,0,1,0,64.67,64.67,64.67,64.67,0,0,0-64.67-64.67Z"/><rect class="cls-2" x="220.615" y="134.082" width="358.098" height="67.143"/><rect class="cls-2" x="266.427" y="221.761" width="267.146" height="66.786"/><rect class="cls-2" x="372.385" y="452.648" width="55.006" height="97.788"/><polygon class="cls-2" points="618.555 679.71 682.015 569.589 116.95 569.589 180.41 679.71 618.555 679.71"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 800 800" style="enable-background:new 0 0 800 800; fill:#FFFFFF;" xml:space="preserve">
+<title>icon</title>
+<g id="_2._Agorra">
+	<path class="st0" d="M399.8,319.7c27.9,0,50.5,22.6,50.5,50.5s-22.6,50.5-50.5,50.5s-50.5-22.6-50.5-50.5l0,0
+		C349.3,342.3,371.9,319.7,399.8,319.7 M399.8,305.6c-35.7,0-64.7,29-64.7,64.7s29,64.7,64.7,64.7s64.7-29,64.7-64.7
+		S435.5,305.6,399.8,305.6L399.8,305.6z"/>
+	<rect x="220.6" y="134.1" class="st0" width="358.1" height="67.1"/>
+	<rect x="266.4" y="221.8" class="st0" width="267.1" height="66.8"/>
+	<rect x="372.4" y="452.6" class="st0" width="55" height="97.8"/>
+	<polygon class="st0" points="618.6,679.7 682,569.6 116.9,569.6 180.4,679.7 	"/>
+</g>
+</svg>
