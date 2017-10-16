@@ -23,6 +23,8 @@ JSONObject json;
 ArrayList<Song> song;
 SoundFile[] file = new SoundFile[number] ;
 PShape[] iconimg = new PShape[number];
+int[] prevcolor	 = new int[3];//for change color with easing
+int[] nowcolor	 = new int[3];//desu
 PShape bysk;
 boolean clicked;
 boolean onMouse = false;
@@ -30,9 +32,9 @@ int a=0,b=0;
 int choosed = -1;
 int lastChoosed =0;
 int x,y,w,h,dx;
+
 //--------------------end of param--------
 public void setup() {
-	println("aaaa"+iconimg.length);
 	
 	noStroke();
 	textSize(width/30);
@@ -98,13 +100,15 @@ class Song{
 	int x,y,w,h;
 	int lastsecond;
 	int second;
+	float dw=2;
+	int step;
 
 	Song(int _id, String _title,String _musicpath, String _imgpath, int _bgcolor, SoundFile _file,PShape _img, int _play){
 		id			= _id;
 		title		= _title;
 		musicpath	= _musicpath;
-		imgpath	= _imgpath;
-		bgcolor	= _bgcolor;
+		imgpath		= _imgpath;
+		bgcolor		= _bgcolor;
 		file 		= _file;
 		img 		= _img;
 		play 		= _play;//default 0
@@ -148,15 +152,28 @@ class Song{
 	public void display(int x, int y, int w, int h){
 		fill(this.bgcolor);
 		rect(x,y,w,h);
-		if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3f, h*1.3f);
-		else shape(img, x, y, w, h);
+
+		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2||play==1){
+			if(w+dw<w*1.3f){
+				// this.dw+=sqrt(dw*1.2);;
+				this.dw+=9/(step+1)*cos(radians(dw));
+				step++;
+			}
+		}else if(w+dw>w){
+			step=0;
+				this.dw/=1.15f;
+			}
+
+			shape(img, x, y, w+dw, h+dw);
+		// if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3, h*1.3);//\u518d\u751f\u6642\u306b\u30b7\u30f3\u30dc\u30eb\u3092\u62e1\u5927\u8868\u793a
+		// else shape(img, x, y, w, h);
 		fill(255);
 		this.timeCount();
 		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2){
 			//-----------------
 			statusOverRay(x,y,w,h,play);
 			//------------------
-			if(clicked&&onMoused(x,y,w,h)){
+			if(clicked){
 				choosed = this.id;
 				println("(nowchoosed,lastChoosed)="+"("+choosed+","+lastChoosed+")");
 				if(choosed==lastChoosed||lastChoosed==0){
