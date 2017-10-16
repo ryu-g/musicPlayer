@@ -5,6 +5,8 @@ JSONObject json;
 ArrayList<Song> song;
 SoundFile[] file = new SoundFile[number] ;
 PShape[] iconimg = new PShape[number];
+int[] prevcolor	 = new int[3];//for change color with easing
+int[] nowcolor	 = new int[3];//desu
 PShape bysk;
 boolean clicked;
 boolean onMouse = false;
@@ -12,9 +14,9 @@ int a=0,b=0;
 int choosed = -1;
 int lastChoosed =0;
 int x,y,w,h,dx;
+
 //--------------------end of param--------
 void setup() {
-	println("aaaa"+iconimg.length);
 	fullScreen();
 	noStroke();
 	textSize(width/30);
@@ -63,7 +65,6 @@ void draw() {
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);
 	}
-	//pos();
 }
 
 
@@ -81,13 +82,15 @@ class Song{
 	int x,y,w,h;
 	int lastsecond;
 	int second;
+	float dw=2;
+	int step;
 
 	Song(int _id, String _title,String _musicpath, String _imgpath, color _bgcolor, SoundFile _file,PShape _img, int _play){
 		id			= _id;
 		title		= _title;
 		musicpath	= _musicpath;
-		imgpath	= _imgpath;
-		bgcolor	= _bgcolor;
+		imgpath		= _imgpath;
+		bgcolor		= _bgcolor;
 		file 		= _file;
 		img 		= _img;
 		play 		= _play;//default 0
@@ -106,8 +109,8 @@ class Song{
 	void stopSong(){
 		if(this.play==1){
 		this.file.stop();//現在の曲を停止して
-		}
-		this.file.cue(0);//再開位置を0にする
+
+}		this.file.cue(0);//再開位置を0にする
 		this.play=0;//非再生状態
 		passed=0;
 		paused=0;
@@ -131,15 +134,27 @@ class Song{
 	public void display(int x, int y, int w, int h){
 		fill(this.bgcolor);
 		rect(x,y,w,h);
-		if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3, h*1.3);
-		else shape(img, x, y, w, h);
+
+		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2||play==1){
+			if(w+dw<w*1.3){
+				this.dw+=9/(step+1)*cos(radians(dw));
+				step++;
+			}
+		}else if(w+dw>w){
+			step=0;
+				this.dw/=1.15;
+			}
+
+			shape(img, x, y, w+dw, h+dw);
+		// if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3, h*1.3);//再生時にシンボルを拡大表示
+		// else shape(img, x, y, w, h);
 		fill(255);
 		this.timeCount();
 		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2){
 			//-----------------
 			statusOverRay(x,y,w,h,play);
 			//------------------
-			if(clicked&&onMoused(x,y,w,h)){
+			if(clicked){
 				choosed = this.id;
 				println("(nowchoosed,lastChoosed)="+"("+choosed+","+lastChoosed+")");
 				if(choosed==lastChoosed||lastChoosed==0){
@@ -190,14 +205,3 @@ void statusOverRay(int x,int y,int w,int h,int status){
 	noFill();
 }
 
-
-
-void pos(){
-	stroke(255,0,0);
-	textSize(12);
-	line(mouseX,0,mouseX,height);
-	line(0,mouseY,width,mouseY);
-	text(mouseX+","+mouseY,mouseX+20,mouseY);
-	text("width="+width+","+"height="+height,mouseX+20,mouseY+20);
-	noStroke();
-}
