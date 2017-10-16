@@ -155,7 +155,6 @@ class Song{
 
 		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2||play==1){
 			if(w+dw<w*1.3f){
-				// this.dw+=sqrt(dw*1.2);;
 				this.dw+=9/(step+1)*cos(radians(dw));
 				step++;
 			}

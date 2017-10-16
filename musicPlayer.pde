@@ -3,7 +3,7 @@ import processing.sound.*;
 final int number = 11;
 JSONObject json;
 ArrayList<Song> song;
-SoundFile[] file = new SoundFile[number] ;
+SoundFile[] file = new SoundFile[number];
 PShape[] iconimg = new PShape[number];
 int[] prevcolor	 = new int[3];//for change color with easing
 int[] nowcolor	 = new int[3];//desu
