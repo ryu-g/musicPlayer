@@ -63,7 +63,6 @@ void draw() {
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);
 	}
-	//pos();
 }
 
 
@@ -106,8 +105,8 @@ class Song{
 	void stopSong(){
 		if(this.play==1){
 		this.file.stop();//現在の曲を停止して
-		}
-		this.file.cue(0);//再開位置を0にする
+
+}		this.file.cue(0);//再開位置を0にする
 		this.play=0;//非再生状態
 		passed=0;
 		paused=0;
@@ -131,7 +130,7 @@ class Song{
 	public void display(int x, int y, int w, int h){
 		fill(this.bgcolor);
 		rect(x,y,w,h);
-		if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3, h*1.3);
+		if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3, h*1.3);//再生時にシンボルを拡大表示
 		else shape(img, x, y, w, h);
 		fill(255);
 		this.timeCount();
@@ -190,14 +189,3 @@ void statusOverRay(int x,int y,int w,int h,int status){
 	noFill();
 }
 
-
-
-void pos(){
-	stroke(255,0,0);
-	textSize(12);
-	line(mouseX,0,mouseX,height);
-	line(0,mouseY,width,mouseY);
-	text(mouseX+","+mouseY,mouseX+20,mouseY);
-	text("width="+width+","+"height="+height,mouseX+20,mouseY+20);
-	noStroke();
-}

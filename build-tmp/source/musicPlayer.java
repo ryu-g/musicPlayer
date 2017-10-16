@@ -81,7 +81,6 @@ public void draw() {
 	for(int i=0; i<song.size(); i++){
 		song.get(i).display(x+dx*i,y,w,h);
 	}
-	//pos();
 }
 
 
@@ -124,8 +123,8 @@ class Song{
 	public void stopSong(){
 		if(this.play==1){
 		this.file.stop();//\u73fe\u5728\u306e\u66f2\u3092\u505c\u6b62\u3057\u3066
-		}
-		this.file.cue(0);//\u518d\u958b\u4f4d\u7f6e\u30920\u306b\u3059\u308b
+
+}		this.file.cue(0);//\u518d\u958b\u4f4d\u7f6e\u30920\u306b\u3059\u308b
 		this.play=0;//\u975e\u518d\u751f\u72b6\u614b
 		passed=0;
 		paused=0;
@@ -208,17 +207,6 @@ public void statusOverRay(int x,int y,int w,int h,int status){
 	noFill();
 }
 
-
-
-public void pos(){
-	stroke(255,0,0);
-	textSize(12);
-	line(mouseX,0,mouseX,height);
-	line(0,mouseY,width,mouseY);
-	text(mouseX+","+mouseY,mouseX+20,mouseY);
-	text("width="+width+","+"height="+height,mouseX+20,mouseY+20);
-	noStroke();
-}
   public void settings() { 	fullScreen(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "musicPlayer" };
