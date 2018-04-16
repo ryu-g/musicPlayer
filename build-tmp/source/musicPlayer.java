@@ -18,20 +18,22 @@ public class musicPlayer extends PApplet {
 
 
 // import java.util.ArrayList;
-final int number = 11;
+final int number = 11;//\u66f2\u6570\u306e\u6307\u5b9a
 JSONObject json;
 ArrayList<Song> song;
-SoundFile[] file = new SoundFile[number] ;
+SoundFile[] file = new SoundFile[number];
 PShape[] iconimg = new PShape[number];
 int[] prevcolor	 = new int[3];//for change color with easing
 int[] nowcolor	 = new int[3];//desu
 PShape bysk;
 boolean clicked;
 boolean onMouse = false;
+boolean dispConsole = false;
 int a=0,b=0;
 int choosed = -1;
 int lastChoosed =0;
 int x,y,w,h,dx;
+
 
 //--------------------end of param--------
 public void setup() {
@@ -138,8 +140,10 @@ class Song{
 		if(this.play==1){
 			if(lastsecond!=second){
 				passed+=1;
+				if (dispConsole) {
 				println("now passed: "+passed);
 				println("now id: "+id);
+				}
 			}
 		}
 		lastsecond=second;
@@ -174,6 +178,7 @@ class Song{
 			//------------------
 			if(clicked){
 				choosed = this.id;
+				if(dispConsole)
 				println("(nowchoosed,lastChoosed)="+"("+choosed+","+lastChoosed+")");
 				if(choosed==lastChoosed||lastChoosed==0){
 					switch(play){
@@ -215,6 +220,7 @@ public void mouseReleased(){
 
 
 public void statusOverRay(int x,int y,int w,int h,int status){
+	//\u518d\u751f\u4e2d\u30a2\u30a4\u30b3\u30f3\u3068\u90fd\u77e5\u4e8b\u505c\u6b62\u30a2\u30a4\u30b3\u30f3\u306e\u8868\u793a
 	fill(0,128);
 	rect(x,y,w,h);
 	fill(255);
@@ -222,7 +228,6 @@ public void statusOverRay(int x,int y,int w,int h,int status){
 	if(status==1){rect(x-w/8,y,w/9,h/3);rect(x+w/8,y,w/9,h/3);}
 	noFill();
 }
-
   public void settings() { 	fullScreen(); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "musicPlayer" };

@@ -1,6 +1,6 @@
 import processing.sound.*;
 // import java.util.ArrayList;
-final int number = 11;
+final int number = 11;//曲数の指定
 JSONObject json;
 ArrayList<Song> song;
 SoundFile[] file = new SoundFile[number];
@@ -10,10 +10,12 @@ int[] nowcolor	 = new int[3];//desu
 PShape bysk;
 boolean clicked;
 boolean onMouse = false;
+boolean dispConsole = false;
 int a=0,b=0;
 int choosed = -1;
 int lastChoosed =0;
 int x,y,w,h,dx;
+
 
 //--------------------end of param--------
 void setup() {
@@ -120,8 +122,10 @@ class Song{
 		if(this.play==1){
 			if(lastsecond!=second){
 				passed+=1;
+				if (dispConsole) {
 				println("now passed: "+passed);
 				println("now id: "+id);
+				}
 			}
 		}
 		lastsecond=second;
@@ -156,6 +160,7 @@ class Song{
 			//------------------
 			if(clicked){
 				choosed = this.id;
+				if(dispConsole)
 				println("(nowchoosed,lastChoosed)="+"("+choosed+","+lastChoosed+")");
 				if(choosed==lastChoosed||lastChoosed==0){
 					switch(play){
@@ -197,6 +202,7 @@ void mouseReleased(){
 
 
 void statusOverRay(int x,int y,int w,int h,int status){
+	//再生中アイコンと都知事停止アイコンの表示
 	fill(0,128);
 	rect(x,y,w,h);
 	fill(255);
@@ -204,4 +210,3 @@ void statusOverRay(int x,int y,int w,int h,int status){
 	if(status==1){rect(x-w/8,y,w/9,h/3);rect(x+w/8,y,w/9,h/3);}
 	noFill();
 }
-

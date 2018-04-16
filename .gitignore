@@ -1,6 +1,6 @@
 
-build-tmp/musicPlayer$Song.class
-build-tmp/musicPlayer.class
-build-tmp/source/musicPlayer.java
+./build-tmp/musicPlayer$Song.class
+./build-tmp/musicPlayer.class
+./build-tmp/source/musicPlayer.java
 *.class
-build-tmp/source/musicPlayer.java
+./build-tmp/source/musicPlayer.java
