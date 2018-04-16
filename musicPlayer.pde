@@ -110,9 +110,9 @@ class Song{
 	}
 	void stopSong(){
 		if(this.play==1){
-		this.file.stop();//現在の曲を停止して
-
-}		this.file.cue(0);//再開位置を0にする
+		this.file.stop();//曲が再生中であれば現在の曲を停止して
+		}		
+		this.file.cue(0);//再開位置を0にする
 		this.play=0;//非再生状態
 		passed=0;
 		paused=0;
@@ -150,8 +150,6 @@ class Song{
 			}
 
 			shape(img, x, y, w+dw, h+dw);
-		// if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3, h*1.3);//再生時にシンボルを拡大表示
-		// else shape(img, x, y, w, h);
 		fill(255);
 		this.timeCount();
 		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2){
