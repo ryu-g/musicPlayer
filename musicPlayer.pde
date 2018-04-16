@@ -1,5 +1,4 @@
 import processing.sound.*;
-// import java.util.ArrayList;
 final int number = 11;//曲数の指定
 JSONObject json;
 ArrayList<Song> song;

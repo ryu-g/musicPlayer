@@ -17,7 +17,6 @@ import java.io.IOException;
 public class musicPlayer extends PApplet {
 
 
-// import java.util.ArrayList;
 final int number = 11;//\u66f2\u6570\u306e\u6307\u5b9a
 JSONObject json;
 ArrayList<Song> song;
@@ -128,9 +127,9 @@ class Song{
 	}
 	public void stopSong(){
 		if(this.play==1){
-		this.file.stop();//\u73fe\u5728\u306e\u66f2\u3092\u505c\u6b62\u3057\u3066
-
-}		this.file.cue(0);//\u518d\u958b\u4f4d\u7f6e\u30920\u306b\u3059\u308b
+		this.file.stop();//\u66f2\u304c\u518d\u751f\u4e2d\u3067\u3042\u308c\u3070\u73fe\u5728\u306e\u66f2\u3092\u505c\u6b62\u3057\u3066
+		}		
+		this.file.cue(0);//\u518d\u958b\u4f4d\u7f6e\u30920\u306b\u3059\u308b
 		this.play=0;//\u975e\u518d\u751f\u72b6\u614b
 		passed=0;
 		paused=0;
@@ -168,8 +167,6 @@ class Song{
 			}
 
 			shape(img, x, y, w+dw, h+dw);
-		// if(play==1&&lastChoosed==this.id)shape(img, x, y, w*1.3, h*1.3);//\u518d\u751f\u6642\u306b\u30b7\u30f3\u30dc\u30eb\u3092\u62e1\u5927\u8868\u793a
-		// else shape(img, x, y, w, h);
 		fill(255);
 		this.timeCount();
 		if(x-w/2<mouseX&&mouseX<x+w/2&&y-h/2<mouseY&&mouseY<y+h/2){
